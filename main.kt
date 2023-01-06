@@ -3,71 +3,87 @@ package LatihanKotlin.`Bank-Kotlin`
 import java.util.Scanner
 
 fun main(){
+    // field untuk while
     var a : Boolean = true
+    // field untuk Scanner
     var inputUser = Scanner(System.`in`)
+    //field untuk memasukkan Username
     println("Masukkan UserName anda : ")
     var nama = inputUser.next()
+    //field untuk memasukkan No Pin
     println("Masukkan No Pin anda : ")
     var number = inputUser.nextLong()
+    // No Pin harus 21441900 Agar masuk Ke Program
     if (number.toInt() != 21441900){
         println("No Pin salah Silahkan Masukkan No Pin yang benar")
         main()
     }
-    var bank = BankKotlin(nama,number,0)
-    var bank1 = BankKotlin("eko",22334455,0)
+    // Instansiasi untuk memanggil class BankKotlin dengan Construktor
+    var bank = BankKotlin(nama,number)
+    var bank1 = BankKotlin("eko",22334455)
 
-    while (a){
-        println("\n")
-        println("||----Selamat datang di Bank kami----||")
-        println("||---Silahkan Pilih menu Transaksi---||")
-        println("|| 1. Untuk Setor Tunai \t\t\t ||")
-        println("|| 2. Untuk Transaksi Lainnya \t\t ||")
-        println("|| 3. Untuk Keluar/Cancel \t\t ||")
-        println("||-----------------------------------||")
-        println("Ketikkan angka untuk Menu Transaksi : ")
-        var input = inputUser.nextInt()
-        if (input == 1){
-            println("masukkan Jumlah Setor tunai")
-            var setor = inputUser.nextInt()
-            bank.setor(setor)
-        }else if (input == 2){
-
-        }else{
-            println("Angka tidak Ditemukan")
-            println("Silahkan masukkan Username lagi")
+    // ini adalah while
+        while (a){
+            // untuk menampilkan menu Transaksi
+            println("\n")
+            println("||----Selamat datang di Bank Bayu----||")
+            println("||---Silahkan Pilih menu Transaksi---||")
+            println("|| 1. Untuk Setor Tunai \t\t\t ||")
+            println("|| 1. Untuk Transaksi Lainnya \t\t ||")
+            println("|| 3. Untuk Keluar/Cancel \t\t\t  ||")
+            println("||-----------------------------------||")
+            println("Ketikkan angka untuk Menu Transaksi : ")
+            // untuk memasukkan input angka untuk memilih menu Transaksi
+            var input = inputUser.nextInt()
+            //percabangan pertama untuk memilih user input
+            if (input == 1){
+                println("masukkan Nominal anda : ")
+                var setor = inputUser.nextInt()
+                bank.setor(setor)
+                println("Apakah Anda Ingin menampilkan Saldo anda (Y/N)")
+                var saldo = inputUser.next()
+                if (saldo == "y"){
+                    bank.checkSaldo()
+                }
+                //percabangan ke dua untuk pilihan UserInput
+                // untuk memasukkan input angka untuk memilih menu Transaksi
+            }else if (input == 2){
+                //untuk menampilkan
+                println("Silahkan Pilih Transaksi")
+                println("1. Untuk Info Akun anda")
+                println("2. untuk Setor ")
+                println("3. Untuk CheckSaldo")
+                println("4. untuk Bayar ")
+                println("5. Untuk Transfer")
+                println("Silahkan Pilih angka : ")
+                //untuk memilih menu transaksi
+                var hasil = inputUser.nextInt()
+                if (hasil == 1){
+                    bank.getInfo()
+                }else if (hasil == 2){
+                    println("masukkan Nominal anda : ")
+                    var setor = inputUser.nextInt()
+                    bank.setor(setor)
+                }else if (hasil == 3){
+                    bank.checkSaldo()
+                }else if (hasil == 4){
+                    println("masukkan Nominal anda : ")
+                    var setor = inputUser.nextInt()
+                    bank.bayar(setor)
+                }else if (hasil == 5){
+                    println("masukkan Nominal anda : ")
+                    var setor = inputUser.nextInt()
+                    bank.transfer(bank1,setor)
+                }
+            }else if (input == 3){
+                println("Terima-Kasih")
+                //jika memilih angka 3 maka akan break atau berhenti dari program
+                break
+            }else{
+                //untuk menampilkan jika pilihan tidak sesuai dengan angka pilihan
+                println("Angka tidak Ditemukan")
+                println("Silahkan masukkan Username lagi")
+            }
         }
     }
-
-
-    // untuk menampilkan nama,number,dan saldo
-    bank.getInfo()
-    //method untuk mengisi ulang saldo dimasukkan ke parameter
-    bank.setor(100_000)
-    // Method untuk mengecek saldo
-    bank.checkSaldo()
-    //method untuk Tarik
-    bank.tarik(10_000)
-    //method untuk bayar
-    bank.bayar(5000)
-    // method untuk Trasnfer
-    bank.transfer(bank1,20_000)
-
-    // cek ke bank1 apakah sudah ditransfer
-    bank1.getInfo()
-}
-//fun yesorno(message : String) : Boolean{
-//    var inputUser = Scanner(System.`in`)
-//    println("$message 1/2")
-//    var hasil = inputUser.next()
-//
-//    while (!hasil.equals(1) && !hasil.equals(2) && !hasil.equals(3)){
-//        println("Pilihan Anda bukan 1/2/3")
-//        println("silahkan masukkan $message (1/2/3)")
-//        hasil = inputUser.next()
-//    }
-//    return hasil.equals()
-//}
-fun eksekusi(){
-
-}
 

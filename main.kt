@@ -48,7 +48,7 @@ fun main(){
                 //percabangan ke dua untuk pilihan UserInput
                 // untuk memasukkan input angka untuk memilih menu Transaksi
             }else if (input == 2){
-                //untuk menampilkan
+                //untuk menampilkan Pilihan Transaki
                 println("Silahkan Pilih Transaksi")
                 println("1. Untuk Info Akun anda")
                 println("2. untuk Setor ")

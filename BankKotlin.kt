@@ -1,14 +1,14 @@
 package LatihanKotlin.`Bank-Kotlin`
 
-class BankKotlin(Name : String,Number : Long,Money : Int) {
+class BankKotlin(Name : String,Number : Long) {
     var nama : String = Name
     var number : Long = Number
-    private var money : Int = Money
+     private var money : Int = 0
 
-        get() = field
-        set(value) {
-            field = value
-        }
+//        get() = field
+//        set(value) {
+//            field = value
+//        }
 
     fun getInfo(){
         println("Your Name = $nama")

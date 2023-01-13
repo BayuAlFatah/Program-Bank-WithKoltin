@@ -20,8 +20,13 @@ class BankKotlin(Name : String,Number : Long) {
         money += saldo
     }
     fun tarik(saldo : Int){
-        println("Tarik saldo sejumlah : $saldo")
-        money -= saldo
+        if (money == 0 || saldo == null){
+            println("saldo anda tidak Mencukupi")
+        }else{
+            println("Tarik saldo sejumlah : $saldo")
+            money -= saldo
+            println("Sisa saldo anda : $money")
+        }
     }
     fun checkSaldo(){
         println("Your Money = $money")

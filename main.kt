@@ -55,6 +55,7 @@ fun main(){
                 println("3. Untuk CheckSaldo")
                 println("4. untuk Bayar ")
                 println("5. Untuk Transfer")
+                println("6. Untuk Tarik Tunai")
                 println("Silahkan Pilih angka : ")
                 //untuk memilih menu transaksi
                 var hasil = inputUser.nextInt()
@@ -74,7 +75,11 @@ fun main(){
                     println("masukkan Nominal anda : ")
                     var setor = inputUser.nextInt()
                     bank.transfer(bank1,setor)
-                }
+                }else if (hasil == 6){
+                    println("Masukkan Nominal anda : ")
+                    var tarik : Int = inputUser.nextInt()
+                    bank.tarik(tarik)
+                }else println("Silahkan pilih angka dengan Benar ")
             }else if (input == 3){
                 println("Terima-Kasih")
                 //jika memilih angka 3 maka akan break atau berhenti dari program

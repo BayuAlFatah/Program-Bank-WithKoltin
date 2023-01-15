@@ -30,7 +30,7 @@ fun main()  {
         println("||----Selamat datang di Bank Bayu----||")
         println("||---Silahkan Pilih menu Transaksi---||")
         println("|| 1. Untuk Setor Tunai \t\t\t ||")
-        println("|| 1. Untuk Transaksi Lainnya \t\t ||")
+        println("|| 2. Untuk Transaksi Lainnya \t\t ||")
         println("|| 3. Untuk Keluar/Cancel \t\t\t  ||")
         println("||-----------------------------------||")
         println("Ketikkan angka untuk Menu Transaksi : ")
